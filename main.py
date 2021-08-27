@@ -16,6 +16,11 @@ async def on_ready():
     print("bot online")
 
 
+@tasks.loop(minutes=1)
+async def keep_alive():
+    pass
+
+
 @client.command()
 async def ping(ctx):
     await ctx.send("pong!")
@@ -28,4 +33,5 @@ async def kick(ctx, member : discord.Member):
         await ctx.send("bot does not have the kick members permission!")
 
 
+keep_alive.start()
 client.run(os.environ['BOT_TOKEN'])
