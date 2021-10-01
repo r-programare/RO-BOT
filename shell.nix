@@ -1,8 +1,8 @@
 with import <nixpkgs> {}; {
-    cppEnv = stdenv.mkDerivation {
-        name = "python-environment";
+    nodeEnv = stdenv.mkDerivation {
+        name = "node-environment";
         buildInputs = with pkgs; [
-            poetry
+            nodejs-16_x
         ];
         shellHook = ''source ~/.bashrc'';
     };

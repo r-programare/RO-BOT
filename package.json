@@ -1,0 +1,36 @@
+{
+  "name": "r-programare",
+  "version": "1.0.0",
+  "description": "Discord bot for r/programare",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint . --ext .ts",
+    "ts": "tsc --project .",
+    "deploy-commands": "npm exec -- ts-node deploy-commands.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/r-programare/RO-BOT.git"
+  },
+  "author": "r/programare",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/r-programare/RO-BOT/issues"
+  },
+  "homepage": "https://github.com/r-programare/RO-BOT#readme",
+  "dependencies": {
+    "@discordjs/builders": "^0.6.0",
+    "@discordjs/rest": "^0.1.0-canary.0",
+    "discord-api-types": "^0.23.1",
+    "discord.js": "^13.1.0",
+    "typescript": "^4.4.3"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.32.0",
+    "@typescript-eslint/parser": "^4.32.0",
+    "eslint": "^7.32.0",
+    "ts-node": "^10.2.1"
+  }
+}

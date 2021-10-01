@@ -4,16 +4,27 @@ This is the source code for the discord bot of [r/programare](https://www.reddit
 Currently there is not a lot going on, but you can see work that needs to be done by checking the issues or, of course, you can create an issue yourself, whether it's a feature request, bug or whatever.
 
 # Development environment
-Before actually running the code you need to have a discord bot ready to be tested. For this you could create a discord bot that has at least the `send message` permission. Make sure you save the bot's token. You can create a discord server only meant for testing the bot, and then add the bot to it using the bot's invite URL
+Before actually running the code you need to have a discord bot ready to be tested. For this you could create a discord bot that has at least the `send message` permission. You can follow [discord.js's](https://discordjs.guide/preparations/#installing-node-js) guide on how to set up an environment. You can create a discord server only meant for testing the bot, and then add the bot to it using the bot's invite URL
 
-The bot is written in python and we use [poetry](https://python-poetry.org/) for managing dependencies, you only need to have that installed. After that:
+The bot is written in typescript. You need a `config.json` file in which you'll put your bot's token, client id and your server's guild id:
+```js
+{
+  "TOKEN": "...",
+  "CLIENT_ID": "...",
+  "GUILD_ID": "..."
+}
+```
+To start the bot up:
 ```sh
-poetry install
+npm install
 
 # To run the bot:
-BOT_TOKEN=<token> poetry run python main.py
+npm run ts
+node build/index.js
+
+# To register the slash commands:
+node build/deploy-commands.js
 ```
-If you use nix I've already provided a very basic nix shell with poetry so that you can start developing quickly :)
 
 # Contributing
 Anyone can contribute to RO-BOT, just make sure to follow these rules:
@@ -26,4 +37,8 @@ Anyone can contribute to RO-BOT, just make sure to follow these rules:
    Optionally more text describing changes
    ```
    Keep the messages short and descriptive. For a guide on how to write good commit messages you can check out "[How to Write a Git Commit Message](https://chris.beams.io/posts/git-commit/)"
+ - It's recommended to run `eslint` before pushing your changes:
+   ```js
+   npm run lint
+   ```
  - When you are happy with your changes you can create a pull request, the only thing to keep in mind is to make sure you link the PR with the issue you're working on
