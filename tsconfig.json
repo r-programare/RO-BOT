@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+        "target": "es2017",
+        "module": "esnext",
+        "moduleResolution": "Node",
+        "esModuleInterop": true,
+        "sourceMap": true,
+        "outDir": "build",
+        "resolveJsonModule": true
+    }
+}
