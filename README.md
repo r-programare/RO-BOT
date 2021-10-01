@@ -42,3 +42,29 @@ Anyone can contribute to RO-BOT, just make sure to follow these rules:
    npm run lint
    ```
  - When you are happy with your changes you can create a pull request, the only thing to keep in mind is to make sure you link the PR with the issue you're working on
+
+## Implementing a new command
+To start working on a new command:
+ - Choose a name for it
+ - Implement it in its own file, that is: `commands/<name_of_command>.ts`
+   * As a starting point:
+     ```ts
+     import { BaseCommandInteraction } from 'discord.js';
+
+     export async function nameOfCommand(interaction: BaseCommandInteraction): Promise<void> {
+         /* implementation goes here... */
+     }
+     ```
+ - Register the command:
+   * Add it to `command_registry.ts`:
+     ```ts
+     import { nameOfCommand } from './commands/name_of_command.js';
+
+     export const commands = [
+       /* ... */
+       'nameOfCommand': [
+           'Description of what your command does',
+            nameOfCommand
+       ],
+     ];
+     ```
