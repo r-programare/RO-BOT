@@ -1,6 +1,6 @@
 import { BaseCommandInteraction } from 'discord.js';
 
-export type CommandDescription = [
+type CommandDescription = [
     description: string,
     exec: (interaction: BaseCommandInteraction) => Promise<void>,
 ];
