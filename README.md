@@ -6,10 +6,12 @@ Currently there is not a lot going on, but you can see work that needs to be don
 # Development environment
 Before actually running the code you need to have a discord bot ready to be tested. For this you could create a discord bot that has at least the `send message` permission. You can follow [discord.js's](https://discordjs.guide/preparations/#installing-node-js) guide on how to set up an environment. You can create a discord server only meant for testing the bot, and then add the bot to it using the bot's invite URL
 
-The bot is written in typescript. You need a `configure.json` file in which you'll put your bot's token:
+The bot is written in typescript. You need a `config.json` file in which you'll put your bot's token, client id and your server's guild id:
 ```js
 {
-  "TOKEN": "..."
+  "TOKEN": "...",
+  "CLIENT_ID": "...",
+  "GUILD_ID": "..."
 }
 ```
 To start the bot up:
